@@ -1,0 +1,5 @@
+server:
+  origin: 'to be confirmed'
+
+db:
+  synchronize: false

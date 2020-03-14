@@ -1,4 +1,5 @@
 import { shuffle, random } from 'lodash';
+import { Injectable } from '@nestjs/common';
 import { Round } from './round.interface';
 import { Category } from '../categories/category.interface';
 import { Language } from './language.enum';
@@ -9,6 +10,7 @@ import { plCategoriesList } from '../categories/data/pl.categories.list';
 import { EnAlphabet } from './alphabets/en.alphabet.list';
 import { PlAlphabet } from './alphabets/pl.alphabet.list';
 
+@Injectable()
 export class RoundsService {
   getRounds(numberOfRounds: number, language: Language): Round[] {
     const randomCategories: Category[] = shuffle(this.getCategories(language));
